@@ -25,8 +25,6 @@ include:
   - sift.scripts.sqlparser
   - sift.scripts.usbdeviceforensics
   - sift.scripts.virustotal-tools
-  - sift.scripts.vshot
-  - sift.scripts.zimmerman
 
 sift-scripts:
   test.nop:
@@ -58,5 +56,3 @@ sift-scripts:
       - sls: sift.scripts.sqlparser
       - sls: sift.scripts.usbdeviceforensics
       - sls: sift.scripts.virustotal-tools
-      - sls: sift.scripts.vshot
-      - sls: sift.scripts.zimmerman

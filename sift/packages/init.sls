@@ -1,6 +1,5 @@
 include:
   - sift.packages.dbus-x11
-  - sift.packages.aeskeyfind
   - sift.packages.afflib-tools
   - sift.packages.aircrack-ng
   - sift.packages.apache2
@@ -17,7 +16,6 @@ include:
   - sift.packages.chromium-browser
   - sift.packages.cifs-utils
   - sift.packages.clamav
-  - sift.packages.cmospwd
   - sift.packages.cryptcat
   - sift.packages.cryptsetup
   - sift.packages.curl
@@ -206,7 +204,6 @@ sift-packages:
     - name: sift-packages
     - require:
       - sls: sift.packages.dbus-x11
-      - sls: sift.packages.aeskeyfind
       - sls: sift.packages.afflib-tools
       - sls: sift.packages.aircrack-ng
       - sls: sift.packages.apache2
@@ -223,7 +220,6 @@ sift-packages:
       - sls: sift.packages.chromium-browser
       - sls: sift.packages.cifs-utils
       - sls: sift.packages.clamav
-      - sls: sift.packages.cmospwd
       - sls: sift.packages.cryptcat
       - sls: sift.packages.cryptsetup
       - sls: sift.packages.curl
