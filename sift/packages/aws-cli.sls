@@ -12,15 +12,15 @@
 
 aws-cli-download:
   file.managed:
-    - name: /tmp/awscli-exe-linux-{{ architecture }}-{{ version }}.zip
-    - source: https://awscli.amazonaws.com/awscli-exe-linux-{{ architecture }}-{{ version }}.zip
+    - name: /tmp/awscli-exe-linux-aarch64-{{ version }}.zip
+    - source: https://awscli.amazonaws.com/awscli-exe-linux-aarch64-{{ version }}.zip
     - source_hash: sha256={{ hash }}
     - makedirs: True
 
 aws-cli-extract:
   archive.extracted:
     - name: /tmp/
-    - source: /tmp/awscli-exe-linux-{{ architecture }}-{{ version }}.zip
+    - source: /tmp/awscli-exe-linux-aarch64-{{ version }}.zip
     - enforce_toplevel: False
     - overwrite: True
     - trim_output: True
@@ -38,7 +38,7 @@ aws-cli-install:
 aws-cli-cleanup:
   file.absent:
     - names:
-      - /tmp/awscli-exe-linux-{{ architecture }}-{{ version }}.zip
+      - /tmp/awscli-exe-linux-aarch64-{{ version }}.zip
       - /tmp/aws/
     - require:
       - cmd: aws-cli-install
