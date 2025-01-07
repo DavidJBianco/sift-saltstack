@@ -67,7 +67,6 @@ include:
   - sift.packages.libcommons-lang3-java
   - sift.packages.libdatetime-perl
   - sift.packages.libext2fs2
-  - sift.packages.libfsapfs-tools
   - sift.packages.libfuse-dev
   - sift.packages.libncurses
   - sift.packages.libnet1
@@ -122,6 +121,7 @@ include:
   - sift.packages.pst-utils
   - sift.packages.qemu
   - sift.packages.qemu-utils
+  - sift.packages.rar
   - sift.packages.rsakeyfind
   - sift.packages.safecopy
   - sift.packages.samba
@@ -233,7 +233,6 @@ sift-packages:
       - sls: sift.packages.libcommons-lang3-java
       - sls: sift.packages.libdatetime-perl
       - sls: sift.packages.libext2fs2
-      - sls: sift.packages.libfsapfs-tools
       - sls: sift.packages.libfuse-dev
       - sls: sift.packages.libncurses
       - sls: sift.packages.libnet1
@@ -288,6 +287,7 @@ sift-packages:
       - sls: sift.packages.pst-utils
       - sls: sift.packages.qemu
       - sls: sift.packages.qemu-utils
+      - sls: sift.packages.rar
       - sls: sift.packages.rsakeyfind
       - sls: sift.packages.safecopy
       - sls: sift.packages.samba
