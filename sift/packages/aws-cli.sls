@@ -7,7 +7,7 @@
 # Version: 2.15.24
 # Notes:
 
-{% set hash = '0950d84094bcb5d5deef9c5bf4d59bccc2efb26927a586da5066047d3e9ef63f' %}
+{% set hash = 'bcea6ebb59467815d5b0f854a77a2042029d8eca65d8033c6ec426e39b8bfc5f' %}
 {% set version = '2.15.24' %}
 
 aws-cli-download:
