@@ -121,7 +121,6 @@ include:
   - sift.packages.pst-utils
   - sift.packages.qemu
   - sift.packages.qemu-utils
-  - sift.packages.rar
   - sift.packages.rsakeyfind
   - sift.packages.safecopy
   - sift.packages.samba
@@ -287,7 +286,6 @@ sift-packages:
       - sls: sift.packages.pst-utils
       - sls: sift.packages.qemu
       - sls: sift.packages.qemu-utils
-      - sls: sift.packages.rar
       - sls: sift.packages.rsakeyfind
       - sls: sift.packages.safecopy
       - sls: sift.packages.samba
