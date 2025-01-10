@@ -7,16 +7,18 @@
 # Version: 2.15.24
 # Notes:
 
-{% set hash = 'c939005170508b19f53730ead3e15b959ec2d9d078a44668e43275864d73ef2f' %}
 {% set version = '2.15.24' %}
 
 {% from "sift/arch.sls" import arch with context %}
 {% if arch == 'amd64' %}
   {% set install_arch = 'x86_64' %}
+  {% set hash = 'c939005170508b19f53730ead3e15b959ec2d9d078a44668e43275864d73ef2f' %}
 {% elif arch == 'arm64' %}
   {% set install_arch = 'aarch64' %}
+  {% set hash = 'bcea6ebb59467815d5b0f854a77a2042029d8eca65d8033c6ec426e39b8bfc5f' %}
 {% else %}
   {% set install_arch = 'unknown' %}
+  {% set hash = 'unknown' %}
 {% endif %}
 
 aws-cli-download:
