@@ -16,7 +16,7 @@
 {% elif arch == 'arm64' %}
   {% set install_arch = 'aarch64' %}
 {% else %}
-  {% set install_arch == 'unknown' %}
+  {% set install_arch = 'unknown' %}
 {% endif %}
 
 aws-cli-download:
