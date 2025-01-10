@@ -10,17 +10,26 @@
 {% set hash = 'c939005170508b19f53730ead3e15b959ec2d9d078a44668e43275864d73ef2f' %}
 {% set version = '2.15.24' %}
 
+{% from "sift/arch.sls" import arch with context %}
+{% if arch == 'amd64' %}
+  {% set install_arch = 'x86_64' %}
+{% elif arch == 'arm64' %}
+  {% set install_arch = 'aarch64' %}
+{% else %}
+  {% set install_arch == 'unknown' %}
+{% endif %}
+
 aws-cli-download:
   file.managed:
-    - name: /tmp/awscli-exe-linux-x86_64-{{ version }}.zip
-    - source: https://awscli.amazonaws.com/awscli-exe-linux-x86_64-{{ version }}.zip
+    - name: /tmp/awscli-exe-linux-{{ install_arch }}-{{ version }}.zip
+    - source: https://awscli.amazonaws.com/awscli-exe-linux-{{ install_arch }}-{{ version }}.zip
     - source_hash: sha256={{ hash }}
     - makedirs: True
 
 aws-cli-extract:
   archive.extracted:
     - name: /tmp/
-    - source: /tmp/awscli-exe-linux-x86_64-{{ version }}.zip
+    - source: /tmp/awscli-exe-linux-{{ install_arch }}-{{ version }}.zip
     - enforce_toplevel: False
     - overwrite: True
     - trim_output: True
@@ -38,7 +47,7 @@ aws-cli-install:
 aws-cli-cleanup:
   file.absent:
     - names:
-      - /tmp/awscli-exe-linux-x86_64-{{ version }}.zip
+      - /tmp/awscli-exe-linux-{{ install_arch }}-{{ version }}.zip
       - /tmp/aws/
     - require:
       - cmd: aws-cli-install
