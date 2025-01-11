@@ -13,7 +13,7 @@ include:
   - sift.packages.bless
   - sift.packages.blt
   - sift.packages.build-essential
-{% if arch == "arm64" %}
+{% if arch != "arm64" %}
   - sift.packages.bulk-extractor
 {% endif %}
   - sift.packages.cabextract
@@ -101,10 +101,12 @@ include:
   - sift.packages.libpff
   - sift.packages.libpff-dev
   - sift.packages.libplist-utils
+{% if arch != "arm64" %}
   - sift.packages.libregf
   - sift.packages.libregf-dev
   - sift.packages.libregf-python3
   - sift.packages.libregf-tools
+{% endif %}
   - sift.packages.libssl-dev
   - sift.packages.libtext-csv-perl
   - sift.packages.libvmdk
@@ -222,7 +224,7 @@ sift-packages:
       - sls: sift.packages.bless
       - sls: sift.packages.blt
       - sls: sift.packages.build-essential
-{% if arch == "arm64" %}
+{% if arch != "arm64" %}
       - sls: sift.packages.bulk-extractor
 {% endif %}
       - sls: sift.packages.cabextract
@@ -310,10 +312,12 @@ sift-packages:
       - sls: sift.packages.libpff
       - sls: sift.packages.libpff-dev
       - sls: sift.packages.libplist-utils
+{% if arch != "arm64" %}
       - sls: sift.packages.libregf
       - sls: sift.packages.libregf-dev
       - sls: sift.packages.libregf-python3
       - sls: sift.packages.libregf-tools
+{% endif %}
       - sls: sift.packages.libssl-dev
       - sls: sift.packages.libtext-csv-perl
       - sls: sift.packages.libvmdk
