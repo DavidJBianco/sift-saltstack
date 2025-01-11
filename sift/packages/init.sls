@@ -1,3 +1,5 @@
+{% from "sift/arch.sls" import arch with context %}
+
 include:
   - sift.packages.dbus-x11
   - sift.packages.aeskeyfind
@@ -11,7 +13,9 @@ include:
   - sift.packages.bless
   - sift.packages.blt
   - sift.packages.build-essential
+{% if arch == "arm64" %}
   - sift.packages.bulk-extractor
+{% endif %}
   - sift.packages.cabextract
   - sift.packages.ccrypt
   - sift.packages.chromium-browser
@@ -218,7 +222,9 @@ sift-packages:
       - sls: sift.packages.bless
       - sls: sift.packages.blt
       - sls: sift.packages.build-essential
+{% if arch == "arm64" %}
       - sls: sift.packages.bulk-extractor
+{% endif %}
       - sls: sift.packages.cabextract
       - sls: sift.packages.ccrypt
       - sls: sift.packages.chromium-browser
