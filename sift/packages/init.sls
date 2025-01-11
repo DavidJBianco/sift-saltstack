@@ -2,7 +2,9 @@
 
 include:
   - sift.packages.dbus-x11
+{% if arch != "arm64" %}
   - sift.packages.aeskeyfind
+{% endif %}
   - sift.packages.afflib-tools
   - sift.packages.aircrack-ng
   - sift.packages.apache2
@@ -21,7 +23,9 @@ include:
   - sift.packages.chromium-browser
   - sift.packages.cifs-utils
   - sift.packages.clamav
+{% if arch != "arm64" %}
   - sift.packages.cmospwd
+{% endif %}
   - sift.packages.cryptcat
   - sift.packages.cryptsetup
   - sift.packages.curl
@@ -213,7 +217,9 @@ sift-packages:
     - name: sift-packages
     - require:
       - sls: sift.packages.dbus-x11
+{%if arch != "arm64" %}
       - sls: sift.packages.aeskeyfind
+{%endif %}
       - sls: sift.packages.afflib-tools
       - sls: sift.packages.aircrack-ng
       - sls: sift.packages.apache2
@@ -232,7 +238,9 @@ sift-packages:
       - sls: sift.packages.chromium-browser
       - sls: sift.packages.cifs-utils
       - sls: sift.packages.clamav
+{% if arch != "arm64" %}
       - sls: sift.packages.cmospwd
+{% endif %}
       - sls: sift.packages.cryptcat
       - sls: sift.packages.cryptsetup
       - sls: sift.packages.curl
