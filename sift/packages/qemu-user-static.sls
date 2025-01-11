@@ -24,7 +24,7 @@ qemu-add-amd64-architecture:
 
 qemu-update-package-list:
     cmd.run:
-        - name: apt update
+        - name: apt-get update
         - shell: /bin/bash
         - require:
             - cmd: qemu-add-amd64-architecture
@@ -35,6 +35,27 @@ qemu-install-libc6-amd64:
         - shell: /bin/bash
         - require:
             - cmd: qemu-update-package-list
+
+edit-sources-list:
+    file.replace:
+        - name: /etc/apt/sources.list
+        - pattern: '^deb '
+        - repl: 'deb [arch=arm64] '
+        - append_if_not_found: False
+        - require:
+            - cmd: qemu-add-amd64-architecture
+
+add-amd64-sources:
+    file.append:
+        - name: /etc/apt/sources.list
+        - text: |
+            # For AMD64 (x86_64) package support
+            deb [arch=amd64] http://archive.ubuntu.com/ubuntu jammy main restricted universe multiverse
+            deb [arch=amd64] http://archive.ubuntu.com/ubuntu jammy-updates main restricted universe multiverse
+            deb [arch=amd64] http://archive.ubuntu.com/ubuntu jammy-backports main restricted universe multiverse
+            deb [arch=amd64] http://archive.ubuntu.com/ubuntu jammy-security main restricted universe multiverse
+        - require:
+            - cmd: qemu-add-amd64-architecture
 
 {% endif %}
 
