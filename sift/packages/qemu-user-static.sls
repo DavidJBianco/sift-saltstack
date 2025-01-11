@@ -22,21 +22,7 @@ qemu-add-amd64-architecture:
             - pkg: qemu-binfmt-support
             - pkg: qemu-user-static
 
-qemu-update-package-list:
-    cmd.run:
-        - name: apt-get update
-        - shell: /bin/bash
-        - require:
-            - cmd: qemu-add-amd64-architecture
-
-qemu-install-libc6-amd64:
-    cmd.run:
-        - name: apt-get install -y libc6:amd64
-        - shell: /bin/bash
-        - require:
-            - cmd: qemu-update-package-list
-
-edit-sources-list:
+qemu-edit-sources-list:
     file.replace:
         - name: /etc/apt/sources.list
         - pattern: '^deb '
@@ -45,7 +31,7 @@ edit-sources-list:
         - require:
             - cmd: qemu-add-amd64-architecture
 
-add-amd64-sources:
+qemu-add-amd64-sources:
     file.append:
         - name: /etc/apt/sources.list
         - text: |
@@ -56,6 +42,28 @@ add-amd64-sources:
             deb [arch=amd64] http://archive.ubuntu.com/ubuntu jammy-security main restricted universe multiverse
         - require:
             - cmd: qemu-add-amd64-architecture
+
+qemu-update-package-list:
+    cmd.run:
+        - name: apt-get update
+        - shell: /bin/bash
+        - require:
+            - cmd: qemu-add-amd64-architecture
+            - cmd: qemu-add-amd64-sources
+            - cmd: qemu-edit-sources-list
+
+qemu-install-libc6-amd64:
+    cmd.run:
+        - name: apt-get install -y libc6:amd64
+        - shell: /bin/bash
+        - require:
+            - cmd: qemu-update-package-list
+
+qemu-install-hello-amd64:
+    package.installed:
+        - name: hello:amd64
+        - require:
+            - cmd: qemu-install-libc6-amd64
 
 {% endif %}
 
