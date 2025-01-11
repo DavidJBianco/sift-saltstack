@@ -49,8 +49,8 @@ qemu-update-package-list:
         - shell: /bin/bash
         - require:
             - cmd: qemu-add-amd64-architecture
-            - cmd: qemu-add-amd64-sources
-            - cmd: qemu-edit-sources-list
+            - file: qemu-add-amd64-sources
+            - file: qemu-edit-sources-list
 
 qemu-install-libc6-amd64:
     cmd.run:
@@ -60,8 +60,9 @@ qemu-install-libc6-amd64:
             - cmd: qemu-update-package-list
 
 qemu-install-hello-amd64:
-    package.installed:
-        - name: hello:amd64
+    cmd.run:
+        - name: apt-get install -y hello:amd64
+        - shell: /bin/bash
         - require:
             - cmd: qemu-install-libc6-amd64
 
