@@ -159,6 +159,7 @@ include:
   - sift.packages.pst-utils
   - sift.packages.qemu
   - sift.packages.qemu-utils
+  - sift.packages.qemu-user-static
   - sift.packages.radare2
   - sift.packages.rar
   - sift.packages.rsakeyfind
