@@ -80,8 +80,10 @@ include:
   - sift.packages.libbde-tools
   - sift.packages.libcommons-lang3-java
   - sift.packages.libdatetime-perl
+{% if arch != "arm64" %}
   - sift.packages.libesedb
   - sift.packages.libesedb-tools
+{% endif %}
   - sift.packages.libevt
   - sift.packages.libevt-tools
   - sift.packages.libevtx
@@ -94,17 +96,25 @@ include:
 {% endif %}
   - sift.packages.libext2fs2
   - sift.packages.libffi-dev
+{% if arch != "arm64" %}
   - sift.packages.libfsapfs-tools
+{% endif %}
   - sift.packages.libfuse-dev
 {% if arch != "arm64" %}
   - sift.packages.libfvde
   - sift.packages.libfvde-tools
 {% endif %}
+{% if arch != "arm64" %}
   - sift.packages.liblightgrep
+{% endif %}
+{% if arch != "arm64" %}
   - sift.packages.libmsiecf
+{% endif %}
   - sift.packages.libncurses
   - sift.packages.libnet1
+{% if arch != "arm64" %}
   - sift.packages.libolecf
+{% endif %}
   - sift.packages.libparse-win32registry-perl
   - sift.packages.libpff
   - sift.packages.libpff-dev
@@ -117,11 +127,15 @@ include:
 {% endif %}
   - sift.packages.libssl-dev
   - sift.packages.libtext-csv-perl
+{% if arch != "arm64" %}
   - sift.packages.libvmdk
+{% endif %}
+{% if arch != "arm64" %}
   - sift.packages.libvshadow
   - sift.packages.libvshadow-dev
   - sift.packages.libvshadow-python3
   - sift.packages.libvshadow-tools
+{% endif %}
   - sift.packages.libxml2-dev
   - sift.packages.libxslt-dev
   - sift.packages.magnus
@@ -299,8 +313,10 @@ sift-packages:
       - sls: sift.packages.libbde-tools
       - sls: sift.packages.libcommons-lang3-java
       - sls: sift.packages.libdatetime-perl
+{% if arch != "arm64" %}
       - sls: sift.packages.libesedb
       - sls: sift.packages.libesedb-tools
+{% endif %}
       - sls: sift.packages.libevt
       - sls: sift.packages.libevt-tools
       - sls: sift.packages.libevtx
@@ -313,17 +329,25 @@ sift-packages:
 {% endif %}
       - sls: sift.packages.libext2fs2
       - sls: sift.packages.libffi-dev
+{% if arch != "arm64" %}
       - sls: sift.packages.libfsapfs-tools
+{% endif %}
       - sls: sift.packages.libfuse-dev
 {% if arch != "arm64" %}
       - sls: sift.packages.libfvde
       - sls: sift.packages.libfvde-tools
 {% endif %}
+{% if arch != "arm64" %}
       - sls: sift.packages.liblightgrep
+{% endif %}
+{% if arch != "arm64" %}
       - sls: sift.packages.libmsiecf
+{% endif %}
       - sls: sift.packages.libncurses
       - sls: sift.packages.libnet1
+{% if arch != "arm64" %}
       - sls: sift.packages.libolecf
+{% endif %}
       - sls: sift.packages.libparse-win32registry-perl
       - sls: sift.packages.libpff
       - sls: sift.packages.libpff-dev
@@ -336,11 +360,15 @@ sift-packages:
 {% endif %}
       - sls: sift.packages.libssl-dev
       - sls: sift.packages.libtext-csv-perl
+{% if arch != "arm64" %}
       - sls: sift.packages.libvmdk
+{% endif %}
+{% if arch != "arm64" %}
       - sls: sift.packages.libvshadow
       - sls: sift.packages.libvshadow-dev
       - sls: sift.packages.libvshadow-python3
       - sls: sift.packages.libvshadow-tools
+{% endif %}
       - sls: sift.packages.libxml2-dev
       - sls: sift.packages.libxslt-dev
       - sls: sift.packages.magnus
