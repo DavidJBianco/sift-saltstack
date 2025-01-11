@@ -1,3 +1,5 @@
+{% from "sift/arch.sls" import arch with context %}
+
 {%- set remove_plugins = ["malprocfind.py","idxparser.py","chromehistory.py","mimikatz.py","openioc_scan.py","pstotal.py","firefoxhistory.py","autoruns.py","malfinddeep.py","prefetch.py","ssdeepscan.py","uninstallinfo.py","trustrecords.py","usnparser.py","apihooksdeep.py","editbox.py","javarat.py"] -%}
 
 # Name: Volatility Framework
@@ -20,7 +22,9 @@ include:
   - sift.python-packages.lxml
   - sift.python-packages.openpyxl
   - sift.python-packages.pefile
+{% if arch != "arm64" %}
   - sift.python-packages.pillow
+{% endif %}
   - sift.python-packages.pycoin
   - sift.python-packages.pycrypto
   - sift.python-packages.pysocks
@@ -59,7 +63,9 @@ sift-python-volatility-community-plugins:
       - sls: sift.python-packages.lxml
       - sls: sift.python-packages.openpyxl
       - sls: sift.python-packages.pefile
+{% if arch != "arm64" %}
       - sls: sift.python-packages.pillow
+{% endif %}
       - sls: sift.python-packages.pycoin
       - sls: sift.python-packages.pycrypto
       - sls: sift.python-packages.pysocks
