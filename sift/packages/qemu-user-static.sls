@@ -8,36 +8,33 @@ qemu-user-static:
     pkg.installed:
         - name: qemu-user-static
 
-binfmt-support:
+qemu-binfmt-support:
     pkg.installed:
         - name: binfmt-support
         - require:
             - pkg: qemu-user-static 
 
-add-amd64-architecture:
+qemu-add-amd64-architecture:
     cmd.run:
         - name: dpkg --add-architecture amd64
         - shell: /bin/bash
         - require:
-            - pkg: binfmt-support
+            - pkg: qemu-binfmt-support
             - pkg: qemu-user-static
-        - watch_in:
-            - pkg: qemu-user-static
-            - pkg: binfmt-support
 
-update-package-list:
+qemu-update-package-list:
     cmd.run:
         - name: apt update
         - shell: /bin/bash
         - require:
-            - cmd: add-amd64-architecture
+            - cmd: qemu-add-amd64-architecture
 
-install-libc6-amd64:
+qemu-install-libc6-amd64:
     cmd.run:
         - name: apt-get install -y libc6:amd64
         - shell: /bin/bash
         - require:
-            - cmd: update-package-list
+            - cmd: qemu-update-package-list
 
 {% endif %}
 
