@@ -1,6 +1,10 @@
+{% from "sift/arch.sls" import arch with context %}
+
 include:
   - sift.python-packages.analyzemft
+{% if arch != 'arm64' %}
   - sift.python-packages.appcompatprocessor
+{% endif %}
   - sift.python-packages.argparse
   - sift.python-packages.bitstring
   - sift.python-packages.colorama
@@ -13,7 +17,9 @@ include:
   - sift.python-packages.lxml
   - sift.python-packages.ntdsxtract
   - sift.python-packages.pefile
+{% if arch != 'arm64' %}
   - sift.python-packages.pillow
+{% endif %}
   - sift.python-packages.poster
   - sift.python-packages.pysocks
   - sift.python-packages.python-dateutil
@@ -33,7 +39,9 @@ sift-python-packages:
     - name: sift-python-packages
     - require:
       - sls: sift.python-packages.analyzemft
+{% if arch != 'arm64' %}
       - sls: sift.python-packages.appcompatprocessor
+{% endif %}
       - sls: sift.python-packages.argparse
       - sls: sift.python-packages.bitstring
       - sls: sift.python-packages.colorama
@@ -46,7 +54,9 @@ sift-python-packages:
       - sls: sift.python-packages.lxml
       - sls: sift.python-packages.ntdsxtract
       - sls: sift.python-packages.pefile
+{% if arch != 'arm64' %}
       - sls: sift.python-packages.pillow
+{% endif %}
       - sls: sift.python-packages.poster
       - sls: sift.python-packages.pysocks
       - sls: sift.python-packages.python-dateutil

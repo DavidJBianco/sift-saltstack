@@ -76,18 +76,24 @@ include:
   - sift.packages.libafflib-dev
   - sift.packages.libafflib
   - sift.packages.libbcprov-java
+{% if arch != "arm64" %}
   - sift.packages.libbde
   - sift.packages.libbde-tools
+{% endif %}
   - sift.packages.libcommons-lang3-java
   - sift.packages.libdatetime-perl
 {% if arch != "arm64" %}
   - sift.packages.libesedb
   - sift.packages.libesedb-tools
 {% endif %}
+{% if arch != "arm64" %}
   - sift.packages.libevt
   - sift.packages.libevt-tools
+{% endif %}
+{% if arch != "arm64" %}
   - sift.packages.libevtx
   - sift.packages.libevtx-tools
+{% endif %}
 {% if arch != "arm64" %}
   - sift.packages.libewf
   - sift.packages.libewf-dev
@@ -166,18 +172,24 @@ include:
   - sift.packages.pff-tools
   - sift.packages.phonon
   - sift.packages.pkg-config
+{% if arch != 'arm64' %}
   - sift.packages.plaso-tools
+{% endif %}
   - sift.packages.powershell
   - sift.packages.pv
   - sift.packages.python-flowgrep
   - sift.packages.python3
   - sift.packages.python3-dev
+{% if arch != 'arm64' %}
   - sift.packages.python3-dfvfs
+{% endif %}
   - sift.packages.python3-fuse
   - sift.packages.python3-pefile
   - sift.packages.python3-pip
   - sift.packages.python3-pypff
+{% if arch != 'arm64' %}
   - sift.packages.python3-pytsk3
+{% endif %}
   - sift.packages.python3-pyqt5
   - sift.packages.python3-redis
   - sift.packages.python3-tk
@@ -309,18 +321,24 @@ sift-packages:
       - sls: sift.packages.libafflib-dev
       - sls: sift.packages.libafflib
       - sls: sift.packages.libbcprov-java
+{% if arch != "arm64" %}
       - sls: sift.packages.libbde
       - sls: sift.packages.libbde-tools
+{% endif %}
       - sls: sift.packages.libcommons-lang3-java
       - sls: sift.packages.libdatetime-perl
 {% if arch != "arm64" %}
       - sls: sift.packages.libesedb
       - sls: sift.packages.libesedb-tools
 {% endif %}
+{% if arch != "arm64" %}
       - sls: sift.packages.libevt
       - sls: sift.packages.libevt-tools
+{% endif %}
+{% if arch != "arm64" %}
       - sls: sift.packages.libevtx
       - sls: sift.packages.libevtx-tools
+{% endif %}
 {% if arch != "arm64" %}
       - sls: sift.packages.libewf
       - sls: sift.packages.libewf-dev
@@ -399,18 +417,24 @@ sift-packages:
       - sls: sift.packages.pff-tools
       - sls: sift.packages.phonon
       - sls: sift.packages.pkg-config
+{% if arch != 'arm64' %}
       - sls: sift.packages.plaso-tools
+{% endif %}
       - sls: sift.packages.powershell
       - sls: sift.packages.pv
       - sls: sift.packages.python-flowgrep
       - sls: sift.packages.python3
       - sls: sift.packages.python3-dev
+{% if arch != 'arm64' %}
       - sls: sift.packages.python3-dfvfs
+{% endif %}
       - sls: sift.packages.python3-fuse
       - sls: sift.packages.python3-pefile
       - sls: sift.packages.python3-pip
       - sls: sift.packages.python3-pypff
+{% if arch != 'arm64' %}
       - sls: sift.packages.python3-pytsk3
+{% endif %}
       - sls: sift.packages.python3-pyqt5
       - sls: sift.packages.python3-redis
       - sls: sift.packages.python3-tk
