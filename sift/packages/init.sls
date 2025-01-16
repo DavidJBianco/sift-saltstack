@@ -13,9 +13,7 @@ include:
   - sift.packages.bless
   - sift.packages.blt
   - sift.packages.build-essential
-{% if arch != "arm64" %}
   - sift.packages.bulk-extractor
-{% endif %}
   - sift.packages.cabextract
   - sift.packages.ccrypt
   - sift.packages.chromium-browser
