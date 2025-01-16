@@ -2,9 +2,7 @@
 
 include:
   - sift.packages.dbus-x11
-{% if arch != "arm64" %}
   - sift.packages.aeskeyfind
-{% endif %}
   - sift.packages.afflib-tools
   - sift.packages.aircrack-ng
   - sift.packages.apache2
