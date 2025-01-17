@@ -78,14 +78,10 @@ include:
   - sift.packages.libdatetime-perl
   - sift.packages.libesedb
   - sift.packages.libesedb-tools
-{% if arch != "arm64" %}
   - sift.packages.libevt
   - sift.packages.libevt-tools
-{% endif %}
-{% if arch != "arm64" %}
   - sift.packages.libevtx
   - sift.packages.libevtx-tools
-{% endif %}
 {% if arch != "arm64" %}
   - sift.packages.libewf
   - sift.packages.libewf-dev
