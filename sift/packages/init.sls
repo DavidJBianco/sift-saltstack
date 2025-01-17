@@ -76,10 +76,8 @@ include:
   - sift.packages.libbde-tools
   - sift.packages.libcommons-lang3-java
   - sift.packages.libdatetime-perl
-{% if arch != "arm64" %}
   - sift.packages.libesedb
   - sift.packages.libesedb-tools
-{% endif %}
 {% if arch != "arm64" %}
   - sift.packages.libevt
   - sift.packages.libevt-tools
