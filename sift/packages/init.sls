@@ -72,10 +72,8 @@ include:
   - sift.packages.libafflib-dev
   - sift.packages.libafflib
   - sift.packages.libbcprov-java
-{% if arch != "arm64" %}
   - sift.packages.libbde
   - sift.packages.libbde-tools
-{% endif %}
   - sift.packages.libcommons-lang3-java
   - sift.packages.libdatetime-perl
 {% if arch != "arm64" %}
