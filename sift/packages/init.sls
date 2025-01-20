@@ -109,9 +109,7 @@ include:
   - sift.packages.libregf-tools
   - sift.packages.libssl-dev
   - sift.packages.libtext-csv-perl
-{% if arch != "arm64" %}
   - sift.packages.libvmdk
-{% endif %}
 {% if arch != "arm64" %}
   - sift.packages.libvshadow
   - sift.packages.libvshadow-dev
@@ -330,9 +328,7 @@ sift-packages:
       - sls: sift.packages.libregf-tools
       - sls: sift.packages.libssl-dev
       - sls: sift.packages.libtext-csv-perl
-{% if arch != "arm64" %}
       - sls: sift.packages.libvmdk
-{% endif %}
 {% if arch != "arm64" %}
       - sls: sift.packages.libvshadow
       - sls: sift.packages.libvshadow-dev
