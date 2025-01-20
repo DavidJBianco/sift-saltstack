@@ -95,9 +95,7 @@ include:
 {% if arch != "arm64" %}
   - sift.packages.liblightgrep
 {% endif %}
-{% if arch != "arm64" %}
   - sift.packages.libmsiecf
-{% endif %}
   - sift.packages.libncurses
   - sift.packages.libnet1
 {% if arch != "arm64" %}
@@ -322,9 +320,7 @@ sift-packages:
 {% if arch != "arm64" %}
       - sls: sift.packages.liblightgrep
 {% endif %}
-{% if arch != "arm64" %}
       - sls: sift.packages.libmsiecf
-{% endif %}
       - sls: sift.packages.libncurses
       - sls: sift.packages.libnet1
 {% if arch != "arm64" %}
