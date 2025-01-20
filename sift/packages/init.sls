@@ -88,9 +88,7 @@ include:
   - sift.packages.libewf-tools
   - sift.packages.libext2fs2
   - sift.packages.libffi-dev
-{% if arch != "arm64" %}
   - sift.packages.libfsapfs-tools
-{% endif %}
   - sift.packages.libfuse-dev
 {% if arch != "arm64" %}
   - sift.packages.libfvde
