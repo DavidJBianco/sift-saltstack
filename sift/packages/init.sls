@@ -155,9 +155,7 @@ include:
   - sift.packages.python3-pefile
   - sift.packages.python3-pip
   - sift.packages.python3-pypff
-{% if arch != 'arm64' %}
   - sift.packages.python3-pytsk3
-{% endif %}
   - sift.packages.python3-pyqt5
   - sift.packages.python3-redis
   - sift.packages.python3-tk
@@ -368,9 +366,7 @@ sift-packages:
       - sls: sift.packages.python3-pefile
       - sls: sift.packages.python3-pip
       - sls: sift.packages.python3-pypff
-{% if arch != 'arm64' %}
       - sls: sift.packages.python3-pytsk3
-{% endif %}
       - sls: sift.packages.python3-pyqt5
       - sls: sift.packages.python3-redis
       - sls: sift.packages.python3-tk
