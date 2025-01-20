@@ -150,9 +150,7 @@ include:
   - sift.packages.python-flowgrep
   - sift.packages.python3
   - sift.packages.python3-dev
-{% if arch != 'arm64' %}
   - sift.packages.python3-dfvfs
-{% endif %}
   - sift.packages.python3-fuse
   - sift.packages.python3-pefile
   - sift.packages.python3-pip
@@ -365,9 +363,7 @@ sift-packages:
       - sls: sift.packages.python-flowgrep
       - sls: sift.packages.python3
       - sls: sift.packages.python3-dev
-{% if arch != 'arm64' %}
       - sls: sift.packages.python3-dfvfs
-{% endif %}
       - sls: sift.packages.python3-fuse
       - sls: sift.packages.python3-pefile
       - sls: sift.packages.python3-pip
