@@ -144,9 +144,7 @@ include:
   - sift.packages.pff-tools
   - sift.packages.phonon
   - sift.packages.pkg-config
-{% if arch != 'arm64' %}
   - sift.packages.plaso-tools
-{% endif %}
   - sift.packages.powershell
   - sift.packages.pv
   - sift.packages.python-flowgrep
@@ -361,9 +359,7 @@ sift-packages:
       - sls: sift.packages.pff-tools
       - sls: sift.packages.phonon
       - sls: sift.packages.pkg-config
-{% if arch != 'arm64' %}
       - sls: sift.packages.plaso-tools
-{% endif %}
       - sls: sift.packages.powershell
       - sls: sift.packages.pv
       - sls: sift.packages.python-flowgrep

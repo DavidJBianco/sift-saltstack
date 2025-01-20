@@ -5,7 +5,9 @@
 # Author: Joachim Metz
 # License: Apache License 2.0 (https://github.com/log2timeline/plaso/blob/main/LICENSE)
 # Notes: psteal.py, psort.py, log2timeline.py
+{% from "sift/arch.sls" import arch with context %}
 
+{% if arch == "amd64" %}
 include:
   - sift.repos.gift
 
@@ -14,3 +16,8 @@ sift-package-plaso-tools:
     - name: plaso-tools
     - require:
       - sls: sift.repos.gift
+{% elif arch == "arm64" %}
+sift-package-plaso-tools:
+  pkg.installed:
+    - name: plaso
+{% endif %}
