@@ -98,9 +98,7 @@ include:
   - sift.packages.libmsiecf
   - sift.packages.libncurses
   - sift.packages.libnet1
-{% if arch != "arm64" %}
   - sift.packages.libolecf
-{% endif %}
   - sift.packages.libparse-win32registry-perl
   - sift.packages.libpff
   - sift.packages.libpff-dev
@@ -323,9 +321,7 @@ sift-packages:
       - sls: sift.packages.libmsiecf
       - sls: sift.packages.libncurses
       - sls: sift.packages.libnet1
-{% if arch != "arm64" %}
       - sls: sift.packages.libolecf
-{% endif %}
       - sls: sift.packages.libparse-win32registry-perl
       - sls: sift.packages.libpff
       - sls: sift.packages.libpff-dev
