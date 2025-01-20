@@ -13,6 +13,10 @@ include:
   - sift.repos.openjdk
 {% if arch == "arm64" %}
   - sift.packages.build-essential
+  - sift.packages.pkg-config
+  - sift.packages.libssl-dev
+  - sift.packages.flex
+  - sift.packages.libewf-dev
 {% endif %}
 
 {% if arch == "amd64" %} 
@@ -26,19 +30,13 @@ sift-package-bulk-extractor:
 automake:
   pkg.installed
 
-libssl-dev:
-  pkg.installed
-
-flex:
-  pkg.installed
-
 zlib1g-dev:
   pkg.installed
 
-pkg-config:
+libre2-dev:
   pkg.installed
 
-libre2-dev:
+libexpat1-dev:
   pkg.installed
 
 bulk-extractor:
@@ -59,4 +57,5 @@ bulk-extractor:
       - pkg: flex 
       - pkg: zlib1g-dev
       - pkg: libre2-dev
+      - sls: sift.packages.libewf-dev
 {% endif %}
