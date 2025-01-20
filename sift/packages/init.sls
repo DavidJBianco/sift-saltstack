@@ -93,6 +93,12 @@ include:
   - sift.packages.libfvde
   - sift.packages.libfvde-tools
 {% if arch != "arm64" %}
+  - sift.packages.automake
+  - sift.packages.zlib1g-dev
+  - sift.packages.libre2-dev 
+  - sift.packages.libexpat1-dev
+{% endif %}
+{% if arch == "arm64" %}
   - sift.packages.liblightgrep
 {% endif %}
   - sift.packages.libmsiecf
@@ -304,6 +310,12 @@ sift-packages:
       - sls: sift.packages.libfvde
       - sls: sift.packages.libfvde-tools
 {% if arch != "arm64" %}
+      - sls: sift.packages.automake
+      - sls: sift.packages.zlib1g-dev
+      - sls: sift.packages.libre2-dev
+      - sls: sift.packages.libre2-dev
+{% endif %}
+{% if arch == "arm64" %}
       - sls: sift.packages.liblightgrep
 {% endif %}
       - sls: sift.packages.libmsiecf
