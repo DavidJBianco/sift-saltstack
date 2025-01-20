@@ -90,10 +90,8 @@ include:
   - sift.packages.libffi-dev
   - sift.packages.libfsapfs-tools
   - sift.packages.libfuse-dev
-{% if arch != "arm64" %}
   - sift.packages.libfvde
   - sift.packages.libfvde-tools
-{% endif %}
 {% if arch != "arm64" %}
   - sift.packages.liblightgrep
 {% endif %}
@@ -319,10 +317,8 @@ sift-packages:
       - sls: sift.packages.libffi-dev
       - sls: sift.packages.libfsapfs-tools
       - sls: sift.packages.libfuse-dev
-{% if arch != "arm64" %}
       - sls: sift.packages.libfvde
       - sls: sift.packages.libfvde-tools
-{% endif %}
 {% if arch != "arm64" %}
       - sls: sift.packages.liblightgrep
 {% endif %}
