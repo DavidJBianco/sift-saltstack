@@ -84,10 +84,8 @@ include:
   - sift.packages.libevtx-tools
   - sift.packages.libewf-dev
   - sift.packages.libewf-python3
-{% if arch == "amd64" %}
   - sift.packages.libewf
   - sift.packages.libewf-tools
-{% endif %}
   - sift.packages.libext2fs2
   - sift.packages.libffi-dev
 {% if arch != "arm64" %}

@@ -15,7 +15,7 @@ include:
 
 libewf:
   pkg.installed:
-    - name: libewf-dev 
+    - name: libewf2
     - require: 
       - sls: sift.repos.ubuntu-universe
 {% endif %}
