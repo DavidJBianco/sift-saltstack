@@ -1,3 +1,6 @@
+{% from "sift/arch.sls" import arch with context %}
+
+{% if arch == "amd64" %}
 {%- set version = salt['pillar.get']('sift_version', 'stable') -%}
 
 include:
@@ -34,3 +37,8 @@ sift-gift-repo-preferences:
     - template: jinja
     - context:
         version: {{ version }}
+{% elif arch == "arm64" %}
+gift-repo:
+  test.nop:
+    - name: gift-repo
+{% endif %}
