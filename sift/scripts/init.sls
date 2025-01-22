@@ -28,9 +28,7 @@ include:
   - sift.scripts.usbdeviceforensics
   - sift.scripts.virustotal-tools
   - sift.scripts.vshot
-{% if arch != 'arm64' %}
   - sift.scripts.zimmerman
-{% endif %}
 
 sift-scripts:
   test.nop:
@@ -63,6 +61,4 @@ sift-scripts:
       - sls: sift.scripts.usbdeviceforensics
       - sls: sift.scripts.virustotal-tools
       - sls: sift.scripts.vshot
-{% if arch != 'arm64' %}
       - sls: sift.scripts.zimmerman
-{% endif %}
